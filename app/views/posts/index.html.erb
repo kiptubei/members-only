@@ -1,0 +1,22 @@
+<h1>Posts Index</h1>
+<% if member_signed_in? %>
+    <%= link_to "Sign Out", destroy_member_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_member_session_path %> | 
+    <%= link_to "Sign Up", new_member_registration_path %>
+<% end %>
+
+<% @posts.each do |post| %>
+
+<div>
+  <h4><%= post.title.upcase %></h4>
+  <p> <%= post.body %> </p>
+  <% if member_signed_in? %>
+    <p> By: <%= post.member.name %> </p>
+  <% end %>
+</div>
+
+<%end%>
+
+
+
