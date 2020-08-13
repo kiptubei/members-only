@@ -5,9 +5,7 @@
 <div>
   <h4><%= post.title.upcase %></h4>
   <p> <%= post.body %> </p>
-  <% if member_signed_in? %>
-    <p> By: <%= post.member.name %> </p>
-  <% end %>
+  <p><%= display_author(post) %></p>
 </div>
 
 <%end%>
