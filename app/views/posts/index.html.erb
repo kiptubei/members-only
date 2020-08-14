@@ -1,0 +1,14 @@
+<h1>Posts Index</h1>
+<div>
+  <%= link_to 'Create Post', new_post_path %>
+</div>
+
+<% @posts.each do |post| %>
+
+<div>
+  <h4><%= post.title.upcase %></h4>
+  <p> <%= post.body %> </p>
+  <p><%= display_author(post) %></p>
+</div>
+
+<%end%>

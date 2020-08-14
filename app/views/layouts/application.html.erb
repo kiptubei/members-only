@@ -10,6 +10,12 @@
   </head>
 
   <body>
+
+  <p class="alert alert-success"> <%= display_prop(notice) %> </p>
+
+  <p class="alert alert-danger"> <%= display_prop(alert) %> </p>
+
+  <%= nav_links_display %>
     <%= yield %>
   </body>
 </html>
