@@ -11,21 +11,11 @@
 
   <body>
 
-    <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <p class="alert alert-success"> <%= display_prop(notice) %> </p>
 
-<% if member_signed_in? %>
-    <%= link_to "Sign Out", destroy_member_session_path, method: :delete %>
-    <%= link_to "New post", new_post_path %>
-  <% else %>
-    <%= link_to "Sign In", new_member_session_path %> |
-    <%= link_to "Sign Up", new_member_registration_path %>
-<% end %>
+  <p class="alert alert-danger"> <%= display_prop(alert) %> </p>
 
+  <%= nav_links_display %>
 
     <%= yield %>
   </body>
